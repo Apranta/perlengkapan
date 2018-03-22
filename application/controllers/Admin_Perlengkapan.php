@@ -2,6 +2,10 @@
 
 class Admin_Perlengkapan extends My_Controller
 {
+	public function __construct(){
+		parent::__construct();
+		$this->auth(1);
+	}
 	public function index()
 	{
 		$this->data['title'] 	= 'Dashboard';

@@ -2,16 +2,32 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class MY_Controller extends CI_Controller
 {
-  public $title = ' | Knowledge Management System';
-	public function __construct()
+  public $title = ' | Perlengkapan';
+	
+  public function __construct()
 	{
 		parent::__construct();
 		date_default_timezone_set("Asia/Jakarta");
 	}
 
-	public function template($data)
+	public function auth($role){
+		$this->data['username'] 	= $this->session->userdata('username');
+		$this->data['role']	= $this->session->userdata('role');
+		if (!isset($this->data['username'], $this->data['role']) || $this->data['role'] != $role )
+		{
+			$this->logout();
+		}
+	}
+
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect('login');
+		exit;
+	}
+
+	public function template($data,$role='admin_perlengkapan')
 	{
-		return $this->load->view('template/layout', $data);
+		return $this->load->view($role.'/template/layout', $data);
 	}
 
 	public function POST($name)
