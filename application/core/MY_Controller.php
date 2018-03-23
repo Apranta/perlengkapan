@@ -12,8 +12,8 @@ class MY_Controller extends CI_Controller
 
 	public function auth($role){
 		$this->data['username'] 	= $this->session->userdata('username');
-		$this->data['role']	= $this->session->userdata('role');
-		if (!isset($this->data['username'], $this->data['role']) || $this->data['role'] != $role )
+		$this->data['id_role']	= $this->session->userdata('id_role');
+		if (!isset($this->data['username'], $this->data['id_role']) || $this->data['id_role'] != $role )
 		{
 			$this->logout();
 		}
