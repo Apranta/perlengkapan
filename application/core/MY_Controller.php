@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MY_Controller extends CI_Controller
 {
   public $title = ' | Perlengkapan';
-	
   public function __construct()
 	{
 		parent::__construct();
@@ -43,7 +42,7 @@ class MY_Controller extends CI_Controller
 	public function JSON($value)
 	{
 		# code...
-		echo "<pre>" . json_encode($value,JSON_PRETTY_PRINT) . "</pre>"; 
+		echo "<pre>" . json_encode($value,JSON_PRETTY_PRINT) . "</pre>";
 	}
 	public function fakultas()
 	{
@@ -54,7 +53,7 @@ class MY_Controller extends CI_Controller
 	}
 
 	public function prodi()
-	{	
+	{
 		$id = $this->POST('id');
 		$this->load->model('Program_studi_m');
 		$data = $this->Program_studi_m->get(['id_fakultas' => $id]);
