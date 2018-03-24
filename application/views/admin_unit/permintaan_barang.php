@@ -55,7 +55,7 @@
 	                                </td>
 	                                <td>
 																			<?php if ($permintaan->disetujui == 1): ?>
-		                                    <button class="btn btn-info" onclick="konfirmasi(1)"> Diterima</button>
+		                                    <button class="btn btn-info" onclick="konfirmasi(<?=$permintaan->id_penempatan?>)"> Diterima</button>
 																				<?php else: ?>
 																					<button class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></button>
 			                                    <button class="btn btn-danger btn-circle" onclick=""><i class="fa fa-trash"></i></button>
