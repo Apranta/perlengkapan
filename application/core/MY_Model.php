@@ -142,7 +142,7 @@ class MY_Model extends CI_Model
 		return $query->result();
 	}
 
-	public function getDataJoin($tables, $jcond, $cond='')
+	public function getDataJoin($tables, $jcond, $cond='',$order_by = '',$order = '')
 	{
 		$this->db->select('*');
 		if (is_array($cond))
@@ -151,6 +151,8 @@ class MY_Model extends CI_Model
 			$this->db->where($cond);
 		for ($i = 0; $i < count($tables); $i++)
 			$this->db->join($tables[$i], $jcond[$i]);
+
+		$this->db->order_by($order_by, $order);
 		return $this->db->get($this->data['table_name'])->result();
 	}
 

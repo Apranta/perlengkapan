@@ -39,7 +39,8 @@ class Admin_Unit extends My_Controller
 			$data_permintaan = [
 				'id_barang' => $this->POST('id_barang'),
 				'id_ruangan' => $this->POST('id_ruangan'),
-				'alokasi' => $this->POST('alokasi')
+				'alokasi' => $this->POST('alokasi'),
+				'adm_unit' => $this->data['admin_data']->username
 			];
 			$this->Penempatan_m->insert($data_permintaan);
 			$this->flashmsg('Permintaan tersimpan, menunggu konfirmasi');

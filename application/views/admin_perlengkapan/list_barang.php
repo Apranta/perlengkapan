@@ -33,7 +33,6 @@
                                 <th>#</th>
                                 <th>Nama Barang</th>
                                 <th>Jumlah</th>
-																<th style="width:50px;">Disetujui</th>
 																<th>Keterangan</th>
                                 <th id="last-child">Action</th>
                             </tr>
@@ -44,11 +43,6 @@
                                 <td><?=$i++?></td>
                                 <td><?=$barang->nama_barang?></td>
                                 <td><?=$barang->jumlah_barang?></td>
-																<?php if ($barang->disetujui == 1): ?>
-																	<td><button style="border:none;" class="label label-success">Ya</button></td>
-																	<?php else: ?>
-																		<td><button style="border:none;" class="label label-danger">Tidak</button></td>
-																<?php endif; ?>
 																<td><?=$barang->keterangan?></td>
                                 <td>
                                     <a href="<?= base_url('admin_perlengkapan/detail_barang') ?>" class="btn btn-default btn-circle"><i class="fa fa-eye"></i></a>

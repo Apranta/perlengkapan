@@ -6,7 +6,13 @@ class Admin_Perlengkapan extends My_Controller
 		parent::__construct();
 		$this->auth(1);
 		$this->load->model(
-			'Barang_m'
+		[
+			'Admin_unit_m',
+			'Penempatan_m',
+			'Ruangan_m',
+			'Barang_m',
+			'Admin_unit_m'
+		]
 		);
 	}
 	public function index()
@@ -20,11 +26,6 @@ class Admin_Perlengkapan extends My_Controller
 	{
 		if ($this->POST('simpan')) {
 			$check = ['nama_barang','jumlah_barang'];
-			// if(!$this->Barang_m->validate($check)){
-			// 	$this->flashmsg('Data harus lengkap','warning');
-			// 	redirect('admin-perlengkapan/list-barang');
-			// 	exit;
-			// }
 			$data = [
 				'nama_barang' => $this->POST('nama_barang'),
 				'keterangan' => $this->POST('keterangan'),
@@ -43,6 +44,26 @@ class Admin_Perlengkapan extends My_Controller
 
 	public function penempatan_barang()
 	{
+		if ($this->POST('setuju')) {
+			$permintaan = $this->Penempatan_m->get_row(['id_penempatan' => $this->POST('id')]);
+			if (!$this->Penempatan_m->cek_stok($permintaan->id_barang,$permintaan->alokasi)) {
+				$this->flashmsg('Jumlah barang tersedia tidak mencukupi','danger');
+				exit;
+			}
+			$this->flashmsg('Permintaan disetujui');
+			return $this->Penempatan_m->update($this->POST('id'),['disetujui' => 1,'keterangan_status' => 'Proses pengiriman']);
+		}
+		if ($this->POST('batal')) {
+			$this->flashmsg('Permintaan dibatalkan','warning');
+			return $this->Penempatan_m->update($this->POST('id'),['disetujui' => 2,'keterangan_status' => 'Dibatalkan']);
+		}
+
+		$tables = ['ruangan','barang']; $jcond = ['id_ruangan','id_barang'];
+		$this->data['data'] = $this->Penempatan_m->getDataJoin($tables,$jcond,NULL,$order_by='disetujui',$order='asc');
+		//$this->dump($this->data['data']);
+		$this->data['barang'] = $this->Barang_m->get();
+		$this->data['ruangan'] = $this->Ruangan_m->get();
+
 		$this->data['title'] 	= 'Dashboard';
 		$this->data['content']	= 'admin_perlengkapan/penempatan_barang';
 		$this->template($this->data);
