@@ -26,6 +26,19 @@ class MY_Model extends CI_Model
 		return $query->result();
 	}
 
+	public function SUM($cond = '',$column)
+	{
+		if (is_array($cond))
+			$this->db->where($cond);
+		if (is_string($cond) && strlen($cond) > 3)
+			$this->db->where($cond);
+
+		$this->db->select_sum($column);
+		$query = $this->db->get($this->data['table_name']);
+
+		return $query->result();
+	}
+
 	public function get_by_order($ref, $order, $cond = '')
 	{
 		if (is_array($cond))
@@ -52,7 +65,7 @@ class MY_Model extends CI_Model
 		$query = $this->db->get($this->data['table_name']);
 
 		return $query->row();
-	}	
+	}
 
 	public function get_by_order_limit($ref, $order, $cond = '')
 	{

@@ -129,7 +129,15 @@
 									<select class="selectpicker form-control" data-live-search="true" name="id_barang">
 										<option selected disabled hidden style='display: none' value=''>Pilih Barang</option>
 										<?php foreach ($barang as $item): ?>
-											<option data-tokens="<?=$item->nama_barang?>" value="<?=$item->id_barang?>"><?=$item->nama_barang?></option>
+											<?php
+												$dipakai = $this->Penempatan_m->SUM(['id_barang' => $item->id_barang,'disetujui' =>1],'alokasi')[0]->alokasi;
+												if(!isset($dipakai)){
+													$dipakai = 0;
+												}
+											 ?>
+											<?php if ($dipakai < $item->jumlah_barang): ?>
+												<option data-tokens="<?=$item->nama_barang?>" value="<?=$item->id_barang?>"><?=$item->nama_barang?> (<b>Tersedia: <?=$item->jumlah_barang - $dipakai?></b>)</option>
+											<?php endif; ?>
 										<?php endforeach; ?>
 									</select>
                 </div>

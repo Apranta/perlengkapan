@@ -31,6 +31,11 @@ class Admin_Unit extends My_Controller
 			//exit;
 		}
 		if ($this->POST('tambah')) {
+			if (!$this->Penempatan_m->cek_stok($this->POST('id_barang'),$this->POST('alokasi'))) {
+				$this->flashmsg('Permintaan melebihi jumlah barang yang tersedia','danger');
+				redirect('admin-unit/permintaan-barang');
+				exit;
+			}
 			$data_permintaan = [
 				'id_barang' => $this->POST('id_barang'),
 				'id_ruangan' => $this->POST('id_ruangan'),
@@ -64,5 +69,11 @@ class Admin_Unit extends My_Controller
 		$this->data['title'] 	= 'Dashboard';
 		$this->data['content']	= 'admin_unit/detail_barang';
 		$this->template($this->data);
+	}
+
+	public function functiontest()
+	{
+		$data = $this->Penempatan_m->cek_stok(2,1);
+		$this->dump($data);
 	}
 }
