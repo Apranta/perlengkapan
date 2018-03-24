@@ -26,6 +26,10 @@ class Admin_Unit extends My_Controller
 
 	public function permintaan_barang()
 	{
+		if ($this->POST('diterima')) {
+			return $this->Penempatan_m->update($this->POST('id'),['barang_sampai' => 1,'keterangan_status' => 'Barang diterima']);
+			//exit;
+		}
 		if ($this->POST('tambah')) {
 			$data_permintaan = [
 				'id_barang' => $this->POST('id_barang'),

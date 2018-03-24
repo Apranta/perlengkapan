@@ -54,9 +54,12 @@
 																		<?=$permintaan->keterangan_status?>
 	                                </td>
 	                                <td>
-	                                    <button class="btn btn-success"> Diterima</button>
-	                                    <button class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></button>
-	                                    <button class="btn btn-danger btn-circle" onclick=""><i class="fa fa-trash"></i></button>
+																			<?php if ($permintaan->disetujui == 1): ?>
+		                                    <button class="btn btn-info" onclick="konfirmasi(1)"> Diterima</button>
+																				<?php else: ?>
+																					<button class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></button>
+			                                    <button class="btn btn-danger btn-circle" onclick=""><i class="fa fa-trash"></i></button>
+																			<?php endif; ?>
 	                                </td>
 	                            </tr>
 														<?php endif; ?>
@@ -189,4 +192,33 @@
         });
 
     });
+
+		function konfirmasi(id) {
+			swal({
+				  title: "Barang telah diterima?",
+				  text: "konfirmasi jika barang diterima",
+				  icon: "info",
+				  buttons: {
+						cancel: "Tidak",
+						confirm:"Konfirmasi"
+					}
+				})
+				.then((konfirm) => {
+				  if (konfirm) {
+						$.ajax({
+                url: "<?= base_url('admin-unit/permintaan-barang') ?>",
+                type: 'POST',
+                data: {
+                    id: id,
+                    diterima: true
+                },
+                success: function() {
+									swal("Barang diterima, tersimpan dalam riwayat permintaan").then((value) => {
+										location.reload();
+									});
+                }
+            });
+				  }
+				});
+		}
 	</script>
