@@ -9,7 +9,7 @@
                             <a href="<?= base_url('admin_unit/') ?>">Unit</a>
                         </li>
                         <li class="active">
-                            <strong>Permintaan Barang</strong>
+                            <strong>Penempatan Barang</strong>
                         </li>
                     </ol>
                 </div>
@@ -18,7 +18,7 @@
 		<div class="panel-body white-bg">
             <div class="ibox">
                 <div class="panel panel-heading">
-                    <h3>Permintaan Barang</h3>
+                    <h3>Penempatan Barang</h3>
                 </div>
                 <div class="table">
                     <table>
@@ -33,7 +33,7 @@
                             </th>
                             <th>
                                 <div class="form-group">
-                                    <input type="number" name="jumlah" class="form-control" placeholder="---">
+                                    <input type="text" name="" class="form-control" placeholder="---">
                                 </div>
                             </th>
                             <th>
@@ -51,6 +51,7 @@
                                 <th>#</th>
                                 <th>Kode</th>
                                 <th>Nama</th>
+                                <th>Tempat</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,16 +59,19 @@
                                 <td>1</td>
                                 <td>Kom1</td>
                                 <td>Komputer</td>
+                                <td>Ruang Admin</td>
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td>Pro1</td>
                                 <td>Proyektor</td>
+                                <td>Ruang Lab</td>
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td>Me1</td>
                                 <td>Meja</td>
+                                <td>Ruang Lab</td>
                             </tr>
                         </tbody>
                     </table>
@@ -77,52 +81,6 @@
 
                 <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#add"><i class="fa fa-plus"></i> Tambah Permintaan</button>
                 <hr> -->
-
-                <div class="panel panel-heading">
-                    <h3>Data Permintaan Barang</h3>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-hover table-bordered dataTables-example">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nama</th>
-                                <th>Status</th>
-                                <th>Keterangan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Komputer</td>
-                                <td>Disetujui</td>
-                                <td>
-                                    <button class="btn btn-success">Konfirmasi</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Proyektor</td>
-                                <td>Disetujui</td>
-                                <td>
-                                    <button class="btn btn-danger">Konfirmasi</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Meja</td>
-                                <td>Disetujui</td>
-                                <td>
-                                    <button class="btn btn-danger">Konfirmasi</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-	</div>
-</div>
 
 <!-- <div class="modal inmodal" id="add" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">

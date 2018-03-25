@@ -1,7 +1,7 @@
 <div class="main">
-	<div class="main-content">
-		<div class="panel panel-headline">
-			<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="main-content">
+        <div class="panel panel-headline">
+            <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-sm-4">
                     <h2>Dashboard</h2>
                     <ol class="breadcrumb">
@@ -14,71 +14,80 @@
                     </ol>
                 </div>
             </div>
-		</div>
-		<div class="panel-body white-bg">
+        </div>
+        <div class="panel-body white-bg">
             <div class="ibox">
                 <div class="panel panel-heading">
-                    <h3>Pengembalian Barang Masuk</h3>
+                    <h3>Pengembalian Barang</h3>
+                </div>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th width="200 px">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>Silahkan Pilih</option>
+                                        <option value="nama">---</option>
+                                    </select>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-group">
+                                    <input type="number" name="jumlah" class="form-control" placeholder="---">
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-group">
+                                    <button class="btn btn-primary">Submit</button>
+                                </div>
+                            </th>
+                        </tr>
+                    </table>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered dataTables-example">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nama Barang</th>
-                                <th>Jumlah</th>
-                                <th>Lokasi Barang</th>
-                                <th>Tanggal Pengembalian</th>
-                                <th>Barang Dikembalikan</th>
+                                <th>Kode</th>
+                                <th>Nama</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
+                                <td>Kom1</td>
                                 <td>Komputer</td>
-                                <td>2</td>
-                                <td>Ruang Admin Fasilkom</td>
-                                <td>3-3-2018</td>
-                                <td>
-                                    <button class="btn btn-danger"> Konfirmasi</button>
-                                </td>
                             </tr>
                             <tr>
                                 <td>2</td>
+                                <td>Pro1</td>
                                 <td>Proyektor</td>
-                                <td>3</td>
-                                <td>Ruang Admin Fasilkom</td>
-                                <td>28-3-2018</td>
-                                <td>
-                                    <button class="btn btn-danger"> Konfirmasi</button>
-                                </td>
                             </tr>
                             <tr>
                                 <td>3</td>
+                                <td>Me1</td>
                                 <td>Meja</td>
-                                <td>4</td>
-                                <td>Ruang Admin Fasilkom</td>
-                                <td>4-3-2018</td>
-                                <td>
-                                    <button class="btn btn-danger"> Konfirmasi</button>
-                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <hr>
+                
+                <?= $this->session->flashdata('msg') ?>
+
+                <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#add"><i class="fa fa-plus"></i> Tambah Permintaan</button>
+                <hr> -->
+
                 <div class="panel panel-heading">
-                    <h3>Riwayat Pengembalian Barang</h3>
+                    <h3>Data Pengembalian Barang</h3>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered dataTables-example">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nama Barang</th>
-                                <th>Jumlah</th>
-                                <th>Penempatan Barang</th>
-                                <th>Tanggal Pengembalian</th>
+                                <th>Nama</th>
+                                <th>Status</th>
                                 <th>Keterangan</th>
                             </tr>
                         </thead>
@@ -86,36 +95,36 @@
                             <tr>
                                 <td>1</td>
                                 <td>Komputer</td>
-                                <td>2</td>
-                                <td>Lab RPL</td>
-                                <td>20-2-2018</td>
-                                <td>Dikembalikan</td>
+                                <td>Disetujui</td>
+                                <td>
+                                    <button class="btn btn-success">Konfirmasi</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td>Proyektor</td>
-                                <td>2</td>
-                                <td>Lab RPL</td>
-                                <td>20-2-2018</td>
-                                <td>Dikembalikan</td>
+                                <td>Disetujui</td>
+                                <td>
+                                    <button class="btn btn-danger">Konfirmasi</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td>Meja</td>
-                                <td>4</td>
-                                <td>Ruang Akademik</td>
-                                <td>12-2-2018</td>
-                                <td>Dikembalikan</td>
+                                <td>Disetujui</td>
+                                <td>
+                                    <button class="btn btn-danger">Konfirmasi</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-	</div>
+    </div>
 </div>
 
-<div class="modal inmodal" id="add" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- <div class="modal inmodal" id="add" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content animated bounceInRight">
 
@@ -144,7 +153,7 @@
 
         </div>
     </div>
-</div>
+</div> -->
 
 <script>
     $(document).ready(function(){

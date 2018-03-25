@@ -23,11 +23,33 @@
                                 </div>
                                 <div class="col-xs-9 text-center">
                                     <div class="huge"></div>
-                                    <div>List Barang</div>
+                                    <div>Data Barang Tersedia</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?= base_url('admin_perlengkapan/list_barang') ?>">
+                        <a href="<?= base_url('admin_perlengkapan/barang_tersedia') ?>">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-table fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-center">
+                                    <div class="huge"></div>
+                                    <div>Data Barang Terdistribusi</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="<?= base_url('admin_perlengkapan/barang_distribusi') ?>">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -45,11 +67,11 @@
                                 </div>
                                 <div class="col-xs-9 text-center">
                                     <div class="huge"></div>
-                                    <div>Penempatan Barang</div>
+                                    <div>Permintaan Barang</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?= base_url('admin_perlengkapan/penempatan_barang') ?>">
+                        <a href="<?= base_url('admin_perlengkapan/permintaan_barang') ?>">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -67,11 +89,11 @@
                                 </div>
                                 <div class="col-xs-9 text-center">
                                     <div class="huge"></div>
-                                    <div>Perbaikan Barang</div>
+                                    <div>Pengembalian Barang</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?= base_url('admin_perlengkapan/perbaikan_barang') ?>">
+                        <a href="<?= base_url('admin_perlengkapan/pengembalian_barang') ?>">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -85,15 +107,15 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-file fa-5x"></i>
+                                    <i class="fa fa-user fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-center">
                                     <div class="huge"></div>
-                                    <div>Status Barang</div>
+                                    <div>Data User</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?= base_url('admin_perlengkapan/status_barang') ?>">
+                        <a href="<?= base_url('admin_perlengkapan/user') ?>">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

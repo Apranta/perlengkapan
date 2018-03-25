@@ -8,11 +8,8 @@
                         <li>
                             <a href="<?= base_url('admin_perlengkapan/') ?>">Perlengkapan</a>
                         </li>
-                        <li>
-                            <a href="<?= base_url('admin_perlengkapan/barang_tersedia') ?>">Barang Tersedia</a>
-                        </li>
                         <li class="active">
-                            <strong>Detail Barang</strong>
+                            <strong>Barang Tersedia</strong>
                         </li>
                     </ol>
                 </div>
@@ -21,36 +18,60 @@
 		<div class="panel-body white-bg">
             <div class="ibox">
                 <div class="panel panel-heading">
-                    <h3>Detail Barang</h3>
+                    <h3>Barang Tersedia</h3>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <table>
+                    <tr>
+                        <th>
+                            <div class="form form-group">
+                                <input type="file" name="" class="form-control"> 
+                            </div>
+                        </th>
+                        <th>
+                            <div class="from form-group">
+                                <input type="submit" name="" value="Submit" class="btn btn-primary">
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+                <hr>
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered dataTables-example">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Kode</th>
+                                <th>Nama Barang</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
-                                <td>Nama Barang</td>
+                                <td>1</td>
+                                <td>Kom1</td>
                                 <td>Komputer</td>
+                                <td>
+                                    <a href="<?= base_url('admin_perlengkapan/detail_barang') ?>" class="btn btn-default btn-circle"><i class="fa fa-eye"></i></a>
+                                </td>
                             </tr>
                             <tr>
-                                <td>Jumlah</td>
                                 <td>2</td>
+                                <td>Pro1</td>
+                                <td>Proyektor</td>
+                                <td>
+                                    <a href="<?= base_url('admin_perlengkapan/detail_barang') ?>" class="btn btn-default btn-circle"><i class="fa fa-eye"></i></a>
+                                </td>
                             </tr>
                             <tr>
-                                <td>Penempatan Barang</td>
-                                <td>Ruang Admin Fasilkom</td>
-                            </tr>
-                            <tr>
-                                <td>Disetujui</td>
-                                <td>Disetujui</td>
-                            </tr>
-                            <tr>
-                                <td>Keterangan</td>
-                                <td>Barang Sampai</td>
+                                <td>3</td>
+                                <td>Me1</td>
+                                <td>Meja</td>
+                                <td>
+                                    <a href="<?= base_url('admin_perlengkapan/detail_barang') ?>" class="btn btn-default btn-circle"><i class="fa fa-eye"></i></a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
-                <a href="<?= base_url('admin_perlengkapan/barang_tersedia') ?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> Kembali</a>
                 </div>
             </div>
         </div>

@@ -18,7 +18,7 @@
                 </li>
                 <?php if ($this->session->userdata('id_role') == 9): ?>
                     <li>
-                        <a href="<?=  base_url('Admin') ?>"><i class="fa fa-diamond"></i> <span class="nav-label">Dashboards</span></a>
+                        <a href="<?=  base_url('Admin') ?>"><i class="fa fa-diamond"></i> <span class="nav-label">Dashboard</span></a>
                     </li>
                     <li id="data_master">
                         <a href="#"><i class="fa fa-briefcase"></i> <span class="nav-label">Data Master</span><span class="fa arrow"></span></a>

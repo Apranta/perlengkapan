@@ -9,7 +9,7 @@
                             <a href="<?= base_url('admin_unit/') ?>">Unit</a>
                         </li>
                         <li class="active">
-                            <strong>Permintaan Barang</strong>
+                            <strong>Data Barang</strong>
                         </li>
                     </ol>
                 </div>
@@ -18,103 +18,36 @@
 		<div class="panel-body white-bg">
             <div class="ibox">
                 <div class="panel panel-heading">
-                    <h3>Permintaan Barang</h3>
-                </div>
-                <div class="table">
-                    <table>
-                        <tr>
-                            <th width="200 px">
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option>Silahkan Pilih</option>
-                                        <option value="nama">---</option>
-                                    </select>
-                                </div>
-                            </th>
-                            <th>
-                                <div class="form-group">
-                                    <input type="number" name="jumlah" class="form-control" placeholder="---">
-                                </div>
-                            </th>
-                            <th>
-                                <div class="form-group">
-                                    <button class="btn btn-primary">Submit</button>
-                                </div>
-                            </th>
-                        </tr>
-                    </table>
+                    <h3>Data Barang</h3>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered dataTables-example">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Kode</th>
-                                <th>Nama</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Kom1</td>
-                                <td>Komputer</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Pro1</td>
-                                <td>Proyektor</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Me1</td>
-                                <td>Meja</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <?= $this->session->flashdata('msg') ?>
-
-                <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#add"><i class="fa fa-plus"></i> Tambah Permintaan</button>
-                <hr> -->
-
-                <div class="panel panel-heading">
-                    <h3>Data Permintaan Barang</h3>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-hover table-bordered dataTables-example">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nama</th>
-                                <th>Status</th>
-                                <th>Keterangan</th>
+                                <th>Nama Barang</th>
+                                <th>Jumlah</th>
+                                <th>Penempatan Barang</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
                                 <td>Komputer</td>
-                                <td>Disetujui</td>
-                                <td>
-                                    <button class="btn btn-success">Konfirmasi</button>
-                                </td>
+                                <td>2</td>
+                                <td>Lab RPL</td>
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td>Proyektor</td>
-                                <td>Disetujui</td>
-                                <td>
-                                    <button class="btn btn-danger">Konfirmasi</button>
-                                </td>
+                                <td>2</td>
+                                <td>Lab RPL</td>
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td>Meja</td>
-                                <td>Disetujui</td>
-                                <td>
-                                    <button class="btn btn-danger">Konfirmasi</button>
-                                </td>
+                                <td>4</td>
+                                <td>Ruang Akademik</td>
                             </tr>
                         </tbody>
                     </table>
@@ -124,7 +57,7 @@
 	</div>
 </div>
 
-<!-- <div class="modal inmodal" id="add" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal inmodal" id="add" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content animated bounceInRight">
 
@@ -153,7 +86,7 @@
 
         </div>
     </div>
-</div> -->
+</div>
 
 <script>
     $(document).ready(function(){
