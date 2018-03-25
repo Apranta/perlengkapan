@@ -36,10 +36,6 @@
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>Penempatan Barang</td>
-                                <td>Ruang Admin Fasilkom</td>
-                            </tr>
-                            <tr>
                                 <td>Disetujui</td>
                                 <td>Disetujui</td>
                             </tr>
@@ -56,31 +52,3 @@
         </div>
 	</div>
 </div>
-
-<script>
-    $(document).ready(function(){
-        $('.dataTables-example').DataTable({
-            pageLength: 25,
-            responsive: true,
-            dom: '<"html5buttons"B>lTfgitp',
-            buttons: [
-                { extend: 'copy'},
-                {extend: 'csv'},
-                {extend: 'excel', title: ''},
-                {extend: 'pdf', title: ''},
-
-                {extend: 'print',
-                    customize: function (win){
-                        $(win.document.body).addClass('white-bg');
-                        $(win.document.body).css('font-size', '10px');
-
-                        $(win.document.body).find('table')
-                                .addClass('compact')
-                                .css('font-size', 'inherit');
-                }
-                }
-            ]
-
-        });
-
-    });

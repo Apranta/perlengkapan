@@ -2,16 +2,31 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class MY_Controller extends CI_Controller
 {
-  public $title = ' | Knowledge Management System';
-	public function __construct()
+  public $title = ' | Perlengkapan';
+  public function __construct()
 	{
 		parent::__construct();
 		date_default_timezone_set("Asia/Jakarta");
 	}
 
-	public function template($data)
+	public function auth($role){
+		$this->data['username'] 	= $this->session->userdata('username');
+		$this->data['id_role']	= $this->session->userdata('id_role');
+		if (!isset($this->data['username'], $this->data['id_role']) || $this->data['id_role'] != $role )
+		{
+			$this->logout();
+		}
+	}
+
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect('login');
+		exit;
+	}
+
+	public function template($data,$role='admin_perlengkapan')
 	{
-		return $this->load->view('template/layout', $data);
+		return $this->load->view($role.'/template/layout', $data);
 	}
 
 	public function POST($name)
@@ -27,7 +42,7 @@ class MY_Controller extends CI_Controller
 	public function JSON($value)
 	{
 		# code...
-		echo "<pre>" . json_encode($value,JSON_PRETTY_PRINT) . "</pre>"; 
+		echo "<pre>" . json_encode($value,JSON_PRETTY_PRINT) . "</pre>";
 	}
 	public function fakultas()
 	{
@@ -38,7 +53,7 @@ class MY_Controller extends CI_Controller
 	}
 
 	public function prodi()
-	{	
+	{
 		$id = $this->POST('id');
 		$this->load->model('Program_studi_m');
 		$data = $this->Program_studi_m->get(['id_fakultas' => $id]);
